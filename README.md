@@ -1,6 +1,6 @@
 # FreeVpn
 
-> Get FreeVpn 
+> Get FreeVpn
 
 ## Build Setup
 
@@ -18,4 +18,10 @@ npm run build
 npm test
 ```
 
-##
+##TODO
+
+1. 剥离filters
+
+2. 关于页面
+
+3. 使用说明 

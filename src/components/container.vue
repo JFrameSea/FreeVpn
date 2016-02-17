@@ -8,7 +8,7 @@
         <div class="panel-body">
           <strong>Author Email</strong> : shinemotec#gmail.com<br/>
           <strong>Author Blog</strong> :<a href="http://19930401.com">19930401.com</a><br/>
-          <strong>Resource</strong> : <a>Github</a><br/>
+          <strong>Resource</strong> : <a href="https://github.com/motecshine/FreeVpn">Github</a><br/>
         </div>
       </div>
 

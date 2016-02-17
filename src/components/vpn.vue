@@ -79,7 +79,6 @@ export default {
   },
   filters: {
     paginates (array, start, limit) {
-      console.log('start:' + start + 'end:' + limit)
       return array.slice(start, limit)
     }
   },
