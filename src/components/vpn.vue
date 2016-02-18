@@ -1,4 +1,5 @@
 <template>
+  <div>
     <table class="table  table-bordered">
       <thead>
         <tr>
@@ -23,22 +24,19 @@
         </tr>
       </tbody>
     </table>
-    <div class="row">
-			<div class="col-md-12 center">
-				<ul class="pager">
-				  	<li>
-				  		<button @click="paginate('previous')" :disabled="page.start <= 0">
-				  			Previous
-				  		</button>
-				  	</li>
-				  	<li>
-				  		<button @click="paginate('next')" :disabled="page.limit >= page.total">
-				  			Next
-				  		</button>
-				  	</li>
-				</ul>
-			</div>
-		</div>
+  </div>
+  <div class="row">
+		<div class="col-md-12 center">
+      <ul class="pager">
+        <li>
+            <button @click="paginate('previous')" :disabled="page.start <= 0">Previous</button>
+			  	</li>
+          <li>
+            <button @click="paginate('next')" :disabled="page.limit >= page.total">Next</button>
+          </li>
+        </ul>
+      </div>
+    </div>
 </template>
 <script>
 export default {
