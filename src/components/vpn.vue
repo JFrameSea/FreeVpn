@@ -3,24 +3,24 @@
     <table class="table  table-bordered">
       <thead>
         <tr>
-          <th>id</th>
-          <th>VpnName</th>
-          <th>ip</th>
-          <th>评价分数</th>
-          <th>ping</th>
-          <th>国家</th>
-          <th>下载</th>
+          <th><a href="#"  v-on:click= "SortBy('Id')" >id</a></th>
+          <th><a href="#"  v-on:click= "SortBy('VpnName') " >VpnName</a></th>
+          <th><a href="#"  v-on:click= "SortBy('Ip') " >ip</a></th>
+          <th><a href="#"  v-on:click= "SortBy('Score') " >评价分数</a></th>
+          <th><a href="#"  v-on:click= "SortBy('Ping') " >ping</a></th>
+          <th><a href="#"  v-on:click= "SortBy('Country') " >国家</a></th>
+          <th><a href="#"  v-on:click= "SortBy('Id') " >下载</a></th>
         </tr>
       </thead>
       <tbody>
-        <tr  v-for = "datalist in VpnData | paginates page.start page.limit">
-          <td>{{datalist[15]}}</td>
-          <td>{{datalist[0]}}</td>
-          <td>{{datalist[1]}}</td>
-          <td>{{datalist[2]}}</td>
-          <td>{{datalist[3]}}</td>
-          <td>{{datalist[6]}}</td>
-          <td><a href="http://wechat.rumia.me/{{datalist[14]}}">OpenVpn配置文件下载</a></td>
+        <tr  v-for = "datalist in VpnData | paginates page.start page.limit | orderBy SortKey -1 ">
+          <td>{{datalist['id']}}</td>
+          <td>{{datalist['VpnName']}}</td>
+          <td>{{datalist['Ip']}}</td>
+          <td>{{datalist['Score']}}</td>
+          <td>{{datalist['Ping']}}</td>
+          <td>{{datalist['Country']}}</td>
+          <td><a href="{datalist['Path']}}">OpenVpn配置文件下载</a></td>
         </tr>
       </tbody>
     </table>
@@ -43,6 +43,7 @@ export default {
   data (response) {
     return {
       VpnData: [],
+      SortKey: null,
       page: {
         start: 0,
         limit: null,
@@ -73,6 +74,9 @@ export default {
         this.page.start -= parseInt(this.page.pagination, 10)
       }
 
+    },
+    SortBy (key) {
+      this.SortKey = key
     }
   },
   ready () {
