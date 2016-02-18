@@ -77,11 +77,6 @@ export default {
 
     }
   },
-  filters: {
-    paginates (array, start, limit) {
-      return array.slice(start, limit)
-    }
-  },
   ready () {
     this.$http({
       url: 'http://wechat.rumia.me/vpn_json',
