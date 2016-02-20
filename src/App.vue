@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Navs from './components/nav'
-import Container from './components/container'
+import Navs from './template/nav'
+import Container from './template/container'
 export default {
   components: {
     Navs,

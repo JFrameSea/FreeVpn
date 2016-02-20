@@ -54,6 +54,7 @@ export default {
   },
   created () {
     this.page.limit = parseInt(this.page.pagination, 10)
+    alert(this.page.limit)
   },
   watch: {
     pagination () {
@@ -86,7 +87,7 @@ export default {
     }).then(function (response) {
       this.VpnData = response.data
       this.page.total = response.data.length
-    }, function (response) {
+    }, function () {
       this.VpnData = 'Api数据获取异常'
     })
   }
