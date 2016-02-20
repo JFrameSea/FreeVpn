@@ -20,7 +20,7 @@
           <td>{{datalist['Score']}}</td>
           <td>{{datalist['Ping']}}</td>
           <td>{{datalist['Country']}}</td>
-          <td><a href="{datalist['Path']}}">OpenVpn配置文件下载</a></td>
+          <td><a href="{{datalist['Path']}}">OpenVpn配置文件下载</a></td>
         </tr>
       </tbody>
     </table>
@@ -54,7 +54,6 @@ export default {
   },
   created () {
     this.page.limit = parseInt(this.page.pagination, 10)
-    alert(this.page.limit)
   },
   watch: {
     pagination () {
